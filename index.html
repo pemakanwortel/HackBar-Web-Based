@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 
+		Built with <3 Krypton (GreyCat) - ExploreOurBrain 
+		Soon New Feature On V2
+	-->
+
+  	<!-- Style -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+	<script src="https://niutech.github.io/x-frame-bypass/x-frame-bypass.js" type="module"></script>
+
+	<title>HackBar Web Based</title>
+	<style type="text/css">
+		.payloadPlace {
+			width: 100%;
+			margin-top: -10px;
+		}
+
+		.payloadPlace1 {
+			width: 100%;
+			margin-top: -10px;
+		}
+
+		#ifr{
+			border: 1px solid black;
+			width: 100%;
+			height: 1000px;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav>
+		  <ul id='menu'>
+		    <li><a class='prett' href='#'>System Variable</a>
+	
+		    	<ul class='menus'>
+			        <li class='has-submenu'><a class='prett' href='#' title='VERSION'>VERSION</a>
+			        	<ul class='submenu'>
+				            <li><a href="#" class="versionRetv" id="version_1">VERSION 1</a></li>
+				            <li><a href="#" class="versionRetv" id="version_2">VERSION 2</a></li>
+				            <li><a href="#" class="versionRetv" id="version_3">VERSION 3</a></li>
+				            <li><a href="#" class="versionRetv" id="version_4">VERSION 4</a></li>
+				            <li><a href="#" class="versionRetv" id="version_5">VERSION 5</a></li>
+					    </ul>
+			        </li>
+			        <li class="has-submenu"><a class='prett' href='#' title='USER'>USER</a>
+			        	<ul class='submenu'>
+				            <li><a href="#" class="userRetv" id="user">USER()</a></li>
+				            <li><a href="#" class="userRetv" id="userSystem">SYSTEM_USER()</a></li>
+				            <li><a href="#" class="userRetv" id="currentUser">CURRENT_USER()</a></li>
+				            <li><a href="#" class="userRetv" id="sessionUser">SESSION_USER()</a></li>
+				            <li><a href="#" class="userRetv" id="substringUser">SUBSTRING @</a></li>
+				            <li><a href="#" class="userRetv" id="processListUser">FROM PROCCESSLIST</a></li>
+					    </ul>
+			        </li>
+			        <li class="has-submenu"><a class='prett' href='#' title='DATABASE'>DATABASE</a>
+			        <ul class='submenu'>
+				            <li><a href="#" class="databaseRetv1" id="byDatabase">DATABASE()</a></li>
+				            <li><a href="#" class="databaseRetv1" id="bySchema">SCHEMA()</a></li>
+				            <li><a href="#" class="databaseRetv1" id="byProcList">FROM PROCESS LIST</a></li>
+					    </ul>
+					</li>
+			        <li class="has-submenu"><a href='#' class='prett' title='GET SERVER FOLDER'>GET SERVER FOLDER</a>
+				         	<ul class='submenu'>
+					            <li><a href="#" class="serverDirRetv" id="charsetFolder">CHARSET FOLDER</a></li>
+					            <li><a href="#" class="serverDirRetv" id="errorLog">ERROR LOG</a></li>
+					            <li><a href="#" class="serverDirRetv" id="langDir">LANGUAGE DIR</a></li>
+					            <li><a href="#" class="serverDirRetv" id="SQLBaseDir">SQL BASEDIR</a></li>
+					            <li><a href="#" class="serverDirRetv" id="SQLDataDir">SQL DATADIR</a></li>
+					            <li><a href="#" class="serverDirRetv" id="TempDir">TEMP DIR</a></li>
+						  	</ul>
+					</li>
+			        <li><a href='#' class="ServerInfo" id="server_os" title='SERVER OS'>SERVER OS</a></li>
+			        <li><a href='#' class="ServerInfo" title='SERVER OS TYPE' id="server_os_type">SERVER OS TYPE</a></li>
+			        <li><a href='#' class="ServerInfo" title='SYMLINK' id="server_sym">SYMLINK</a></li>
+		    	</ul>
+		    </li>
+
+		    <li><a class='prett' href='#' title='UNION BASED'>UNION BASED</a>
+		      <ul class='menus'>
+
+		        <li class='has-submenu'><a class='prett' href='#' title='UNION STATEMENT'>UNION STATEMENT</a>
+		          <ul class='submenu'>
+		            <li><a href="#" class="unionStatement" id="unionINT" title="INT,INT">INT,INT</a></li>
+		            <li><a href="#" class="unionStatement" id="unionPLUS" title="INT,INT(+)">INT,INT(+)</a></li>
+		            <li><a href="#" class="unionStatement" id="unionINTBracket" title="(INT)+(INT)">(INT)+(INT)</a></li>
+		          </ul>
+		        </li>
+
+		        <li class='has-submenu'><a class='prett' href='#' title='Column Count'>Column Count</a>
+					<ul class='submenu'>
+			            <li><a href="#" class="columnCount" id="group_by" title="GROUP BY">GROUP BY</a></li>
+			            <li><a href="#" class="columnCount" id="procedure_analisys" title="PROCEDURE ANALISYS">PROCEDURE ANALISYS</a></li>
+			            <li><a href="#" class="columnCount" id="count3" title="(SELECT * FROM *)(SELECT = 1)">(SELECT * FROM *)..</a></li>
+		          	</ul>
+		        </li>
+
+				<li class='has-submenu'><a class='prett' href='#' title='Database'>Databases</a>
+					<ul class='submenu'>
+			            <li><a href="#" class="databaseRetv" id="group_concat" title="GROUP CONCAT">GROUP CONCAT</a></li>
+			            <li><a href="#" class="databaseRetv" id="one_shot" title="One Shot">One Shot</a></li>
+		          	</ul>
+		        </li>
+
+		        <li class='has-submenu'><a class='prett' href='#' title='Tables'>Tables</a>
+					<ul class='submenu'>
+			            <li><a href="#" class="tableRetv" id="group_concat" title="GROUP CONCAT">GROUP CONCAT</a></li>
+			            <li><a href="#" class="tableRetv" id="one_shot" title="One Shot">One Shot</a></li>
+		          	</ul>
+		        </li>
+		        
+		        <li class='has-submenu'><a class='prett' href='#' title='Columns'>Columns</a>
+					<ul class='submenu'>
+			            <li><a href="#" class="columnsRetv" id="group_concat" title="GROUP CONCAT">GROUP CONCAT</a></li>
+			            <li><a href="#" class="columnsRetv" id="one_shot" title="One Shot">One Shot</a></li>
+		          	</ul>
+		        </li>
+
+				<li class='has-submenu'><a class='prett' href='#' title='Dump In One Cr0t'>DIOS</a>
+					<ul class='submenu'>
+			            <li><a href="#" class="DIOS" id="madblood">DIOS By MadBlood</a></li>
+			            <li><a href="#" class="DIOS" id="zen" >DIOS By Zen</a></li>
+			            <li><a href="#" class="DIOS" id="zen_waf">DIOS By Zen WAF</a></li>
+			            <li><a href="#" class="DIOS" id="double_xero">DIOS By Doubl3 X3r0</a></li>
+			            <li><a href="#" class="DIOS" id="dios_replace">DIOS Replace</a></li>
+			            <li><a href="#" class="DIOS" id="dios_variable_waf">Variable Method WAF DIOS </a></li>
+			            <li><a href="#" class="DIOS" id="simple_dios">Simple DIOS </a></li>
+			            <li><a href="#" class="DIOS" id="dios_shariq">DIOS By Shariq</a></li>
+			            <li><a href="#" class="DIOS" id="dios_rummy">DIOS By Rummy</a></li>
+		          	</ul>
+		        </li>
+		      </ul>
+		    </li>
+		    <li><a class='prett' href='#' title='Error Based'>Error Based</a>
+				<ul class='menus'>
+			        <li class='has-submenu'><a class='prett' href='#' title='ERROR BASED'>Error Based</a>
+			          <ul class='submenu'>
+			            <li><a href="#" class="error_based" id="eb_getVersion">Get Version</a></li>
+			            <li><a href="#" class="error_based" id="eb_getDB">Get Database</a></li>
+			            <li><a href="#" class="error_based" id="eb_getTB">Get Tables</a></li>
+			            <li><a href="#" class="error_based" id="eb_getCol">Get Columns</a></li>
+			            <li><a href="#" class="error_based" id="eb_getData">Get Data</a></li>
+			          </ul>
+			        </li>
+
+			        <li class='has-submenu'><a class='prett' href='#' title='XPATH'>XPATH EXTRACTVALUE</a>
+			          <ul class='submenu'>
+			            <li><a href="#" class="xpath_exval" id="xpath_getVersion">Get Version</a></li>
+			            <li><a href="#" class="xpath_exval" id="xpath_getTB">Get Tables</a></li>
+			            <li><a href="#" class="xpath_exval" id="xpath_getCol">Get Columns</a></li>
+			            <li><a href="#" class="xpath_exval" id="xpath_getData">Get Data</a></li>
+			          </ul>
+			        </li>
+
+			        <li class='has-submenu'><a class='prett' href='#' title='UNION STATEMENT'>XPATH UPDATEXML</a>
+			          <ul class='submenu'>
+			          	<li><a href="#" class="xpath_xml" id="xpath_getVersion">Get Version</a></li>
+			            <li><a href="#" class="xpath_xml" id="xpath_getTB">Get Tables</a></li>
+			            <li><a href="#" class="xpath_xml" id="xpath_getCol">Get Columns</a></li>
+			            <li><a href="#" class="xpath_xml" id="xpath_getData">Get Data</a></li>
+			          </ul>
+			        </li>
+
+		    	</ul>
+		    </li>
+		    <li><a class='prett' href='#' title='WAF Bypass'>WAF Bypass</a>
+		    	<ul class='menus'>
+			        <li><a href='#' class="waf_bypass" id="string1">/*!_STRING_*/</a></li>
+			        <li><a href='#' class="waf_bypass" id="string2">/*!50000_STRING_*/</a></li>
+			        <li><a href='#' class="waf_bypass" id="string3">/*!31337_STRING_*/</a></li>
+			        <li><a href='#' class="waf_bypass" id="string4">/*!12345_STRING_*/</a></li>
+			        <li><a href='#' class="waf_bypass" id="string5">WHITE/**-_-**/SPACES?</a></li>
+			    </ul>
+		    </li>
+		    <li><a class='prett' href='#' title='Priv Check'>Privilleges Check</a>
+		    	<ul class='menus'>
+			        <li><a href='#' class="privCheck" id="via_is">via I_S.PRIVILEGES</a></li>
+			        <li><a href='#' class="privCheck" id="via_mysql">via MySQL System Table</a></li>
+			    </ul>
+		    </li>
+		    <li><a href='#' title='About' id="about">About</a></li>
+		  </ul>
+		</nav>
+		<form>
+			<textarea id="payload" class="payloadPlace" rows="5" placeholder="http://URL"></textarea>
+			<input type="button" class="btn btn-primary" name="submit" value="Execute (CTRL+ENTER)" id="exec">
+			<i class="btn fas fa-arrow-left hex" id="decHex"></i>
+			0xHEX
+			<i class="btn fas fa-arrow-right hex" id="encHex"></i>
+
+			~ ExploreOurBrain
+
+			<i class="btn fas fa-arrow-left base64" id="decBase64"></i>
+			BASE64
+			<i class="btn fas fa-arrow-right base64" id="encBase64"></i>
+		</form>	
+
+		
+	</div>
+	<iframe id="ifr" src=""></iframe>
+
+</body>
+</html>
+
+<!-- Scripts -->
+<script
+  	src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script type="text/javascript" src="core1.js"></script>
